@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    
+    <title></title>
+</head>
+<body>
+    {% block content %}
+
+    <div  class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="btn" id="">
+                     <button type="button" class="btn btn-primary"  onclick=hide_show_menu()> Lesson Study</button>                 
+                 </div>
+                 <nav class="sidebar hidden"  id="showMenu">
+                    <div class="text">
+                      Learn at your own pace
+                    </div>
+                    <ul class="main_side">
+                       <li class="active"  id="dashboard"><a href="#">Topics</a></li>
+                       <li>
+                          <a class="white-text"  onclick="Algebric_lessons()">Algebric Expression
+                          <span class="fa fa-caret-down" id="1"></span>
+                          </a>
+                          <ul class="item-show-1" id="A">
+                             <li><a onclick="lesson_level_1()">Level 1</a></li>
+                             <li><a href="#">Level 2</a></li>
+                             <li><a href="#">Level 3</a></li>
+                          </ul>
+                       </li>
+                       <li>
+                          <a class="white-text"  onclick="Next_lessons()">Next Lesson
+                          <span class="fa fa-caret-down"  id="2"></span>
+                          </a>
+                          <ul class="item-show-1"  id="B">
+                            <li><a href="#">Level 1</a></li>
+                            <li><a href="#">Level 2</a></li>
+                            <li><a href="#">Level 3</a></li>
+                          </ul>
+                       </li>
+                       <li><a href="#">Users</a></li>
+                       <li><a href="#">Message</a></li>
+                       <li><a href="#">Bookmark</a></li>
+                       <li><a href="#">Files</a></li>
+                    </ul>
+                 </nav>                
+            </div>
+            
+            <hr>
+            <div class="container-fluid hidden"  id="option" >
+
+                  <div class="container">
+                    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                      <ol class="breadcrumb">
+                        <li class="breadcrumb-item " onclick="toggle_examples()"> <a>Examples</a> </li>
+                        <li class="breadcrumb-item "  onclick="toggle_practice()"><a>Practice</a> </li>
+                        <li class="breadcrumb-item "  onclick=""><a>PlayGame</a> </li>                      
+                      </ol>
+                    </nav>
+                  </div>
+                    
+
+                    <div class="container" >
+                      <div class="container" id="examples">
+                        
+                        {% for i in numb %}    
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Que {{i}}</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-body-secondary">Solution</small></p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>                            
+                            </div>
+                            <br><hr>
+                           
+                          </div>
+                        {% endfor %}
+                      </div>
+                      
+
+                      <div class="container hidden"   id="practice">
+                        {% for i in numb %}    
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Que {{i}}</h5>
+                              <p class="card-text">This is a pratice session.</p>
+                            <!-- Button trigger modal/dialog -->
+                              <p class="card-text"  data-bs-toggle="modal" data-bs-target="#solutionModal"><small class="text-body-secondary">Solution</small></p>
+                            </div>
+                          
+                             <!-- Modal/dialog -->                            
+                            <div class="modal fade" id="solutionModal" tabindex="-1" aria-labelledby="solutionModalLabel" aria-hidden="true">
+                              <div class="modal-dialog  modal-dialog-centered modal-fullscreen">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="solutionModalLabel">Solution!!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    solution here
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                                                      
+                          </div>
+                        {% endfor %}
+                      </div>
+
+
+
+                      <div class="container  hidden"   id="game">
+                        {% for i in numb %}    
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Que {{i}}</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-body-secondary">Solution</small></p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>                            
+                            </div>
+                            <br><hr>
+                           
+                          </div>
+                        {% endfor %}
+                      </div>
+                          
+                                              
+                    </div>                
+            </div>
+            
+            
+        </div>
+    </div>
+
+    {% endblock %}
+
+</body>
+</html>
