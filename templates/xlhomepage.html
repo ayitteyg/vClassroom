@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    
+    <title></title>
+</head>
+<body>
+
+    {% block content %}
+    
+      <div class="container-fluid ">
+        <div class="row">
+            <h5><small>Improve your task with Excel</small> </h5>
+            <div class="col-lg-3">
+              <div class="sidenav-vl">
+                <div class="btn" id="">
+                    <img  type="button"  onclick=hide_show_xl_menu() src="{% static 'images/xl-image2.png' %}" alt="">                                     
+                    </div>
+                    <nav class="sidebar hidden"  id="xl-nav">
+                    <div class="text">
+                        
+                    </div>
+                    <ul class="main_side">
+                        <li><a class="white-text"  onclick="xl_Assumptions()">Assumptions & Tips</a></li>
+                        <li><a class="white-text"  onclick="useful_operations()">Some useful operations</a></li>
+                        <li><a class="white-text"  onclick="useful_operations1()">Some useful functions</a></li>
+                        <li><a class="white-text"  onclick="useful_operations2()">Practical Examples</a></li>
+                        <li><a href="#">Message</a></li>
+                        <li><a href="#">Bookmark</a></li>
+                        <li><a href="#">Files</a></li>
+                        </li>
+                    </ul>
+                    </nav> 
+                </div>                 
+            </div>
+
+            <div class="col-lg-9">
+
+                <div class="container hidden"  id="assumptions">
+                    <div class="card">
+                        <div class="card-header">
+                          <small>Assumptions</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body">
+                                <p class="card-text">You are already familier with Excel Spread sheet.</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">You use excel regularly / sometimes on PC or phone for basic task.</p>
+                            </div>
+                        </div>
+                      </div>  
+                      
+                      
+                      <div class="card">
+                        <div class="card-header">
+                          <small>Tips</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body">
+                                <p class="card-text">Think of Excel as your notebook with pages. fortunately, excel has about 255 pages, you just can't use them all</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Think of Excel as your maths book / drawing sheet with all instruments and formulas you could ever need.</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Think of Excel as your programming tool or machine you can instruct to do something for you in your absence.</p>
+                            </div>
+                        </div>
+                      </div> 
+                      
+                      <div class="card">
+                        <div class="card-header">
+                          <small>Limitations</small>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-body">
+                                <p class="card-text">Not intended for beginners, if you are new to excel, see </p> <a href="">beginners guide</a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Intermediate / advance users of excel might not need it.</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">This tutorial highight one of the many ways excel can help make our task easier.</p>
+                            </div>
+                        </div>
+                      </div> 
+
+                </div>
+
+                
+                <!--some useful functions container-->
+                <br><hr>
+                <div class="container" id="" >
+                   
+                    <h4>Named Ranges</h4>
+                    <div class="card-body">
+                        <p class="card-text">We normally performs some operations on certain columns with data in the spreed sheet. Example: we have the following sales data and would like to sum the sales at cell C5 . We would usally go the cell C5 and enter =SUM(B5:B16). This is simple right, but what if we name the range we want to sum as sales_data and refer to it always.</p>
+                    </div>
+                    <br><hr>
+                    <div class="card-body">
+                        <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
+                        <p class="card-text">Select the data range you want to sum, ie: B5:B16. On your ribbon, go to Formulas>  Named Manager > New.   give a name to your data:  like  sales_data. click on the  reffer to, to see if you selected the right data, then CLOSE. Now in cell C12, enter = sum(sales_data) </p>
+                    </div>
+                        
+                    <center><img src="{% static 'images/name_rng.png' %}" alt="" style="width: fit-content;"></center>
+                    <br><hr>
+                    <div class="card-body">
+                        <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
+                        <p class="card-text">You can change the name later if you wish, by using the edit instead of new. you can increase the range for future entery, for instance, go the Named Manager, select the named range, go to refers to, instead of :B16 ,  increase it to :B16000. Now any sales you enter within that column range is captured</p>
+                    </div>
+
+                    <br><hr>
+                    <div class="card-body">
+                        <div class="card-header"><small style="color: rgb(136, 7, 78);">How it improves your daily task</small></div>
+                        <p class="card-text">Assuming you often have to refer to your sales data multiples times in different sheets in your workbook. Naming your data saves your from shuffling between sheets to locate your data and dragging it. Wherever, you are in your workbook, just enter =sum(sales_data)</p>
+                    </div>
+                    <br><hr>
+                    for instance in sheet3, just do this
+                    <center><img src="{% static 'images/name_rng2.png' %}" alt="" style="width: fit-content;"></center>
+
+                </div> 
+
+            </div>
+        </div>
+      </div>       
+    {% endblock %}
+
+</body>
+</html>
