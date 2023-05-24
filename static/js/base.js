@@ -1,4 +1,11 @@
 
+function showStudentForm(){
+           
+  console.log("button clicked")
+ /* document.getElementById('student').classList.remove('hidden')
+  document.getElementById('username').classList.add('hidden')*/
+}
+
 
 
 function hide_show_menu(){         
@@ -112,6 +119,7 @@ function xl_Assumptions(){
 
 
 function useful_operations(){
+  toggle_nav_bar('xl-nav')
   toggle_nav_bar("operations")
   rotate_caret('2')  
 }

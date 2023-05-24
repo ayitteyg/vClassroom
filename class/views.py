@@ -104,7 +104,7 @@ def register(request):
             else:
                 context = {'msg': 'Sorry! could not create login details, Try again'}
                 messages.info(request, 'Username or Password is incorrect')
-                return render (request, 'useraccount.html', {'form':form})
+                return render (request, 'useraccount.html', {'form':form}, context)
             
         pass
         #print(form.errors.as_data)           

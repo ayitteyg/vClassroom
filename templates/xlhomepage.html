@@ -19,7 +19,7 @@
         <div class="row">
             <h5><small>Improve your task with Excel</small> </h5>
             <div class="col-lg-3">
-              <div class="sidenav-vl">
+              <div class="">
                 <div class="btn" id="">
                     <img  type="button"  onclick=hide_show_xl_menu() src="{% static 'images/xl-image2.png' %}" alt="">                                     
                     </div>
@@ -32,8 +32,7 @@
                         <li><a class="white-text"  onclick="useful_operations()">Some useful operations<span class="fa fa-caret-down" id="2"></span></a></li>
                         <li><a class="white-text"  onclick="useful_operations1()">Some useful functions</a></li>
                         <li><a class="white-text"  onclick="useful_operations2()">Practical Examples</a></li>
-                        <li><a href="#">Message</a></li>
-                        <li><a href="#">Bookmark</a></li>
+                        <li><a href="#">Messages</a></li>
                         <li><a href="#">Files</a></li>
                         </li>
                     </ul>
@@ -41,9 +40,9 @@
                 </div>                 
             </div>
 
-            <div class="col-lg-9">
+            <div class="col-lg-9  sidenav-vl">
 
-                <div class="container hidden "  id="assumptions">
+                <div class="container  "  id="assumptions">
                     <div class="card">
                         <div class="card-header">
                           <small>Assumptions</small>
@@ -98,14 +97,14 @@
                 
                 <!--some useful operations container-->
                 <br><hr>
-                <div class="container " id="operations" >
+                <div class="container hidden" id="operations" >
 
                     <!--breadcumb bar-->
                     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                           <li class="breadcrumb-item active" aria-current="page">Named Ranges</li>  
                           <li class="breadcrumb-item"><a href="#data-validation">Data validation</a></li>
-                          <li class="breadcrumb-item"><a href="#">Next</a></li>
+                          <li class="breadcrumb-item"><a href="#next">Next</a></li>
                         </ol>
                       </nav>
                     <!--breadcumb bar-->
@@ -138,29 +137,28 @@
                         <center><img src="{% static 'images/name_rng2.png' %}" alt="" style="width: fit-content;"></center>
                    </div> 
 
-                    <div id="data-validation">
+                    <div id="next-item">
                         <br><hr>
                         <h4>Data Validation / Drop down</h4>
                         <div class="card-body">
                             <p class="card-text">While working on our spreed sheets, sometimes we would prefer getting some sort of drop down list of items so we can select from, or probably restrict a particular cell or range to accept only a specific type of data. This is where data validation comes in handy. </p>
-                            <p class="card-text">For instance you have a list of customer at range B4:B10. you want to assign a customer to a certain locations, say Accra,Kumasi,Tamale. you want to avoid copy and paste or typing every time. What do you do? </p>
-                        </div>
+                            <p class="card-text">For instance you have a list of customer at range B4:B10. you want to assign a customer a certain locations, say Accra,Kumasi,Tema. you want to avoid copy and paste or typing every time. What do you do? </p>
                         </div>
                         <br><hr>
                         <div class="card-body">
                             <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
-                            <p class="card-text">select the cell or range you want to get the drop down list, in this case cell E5:E7, On the ribbon, go to <br>Data <br>Data Validation <br>Select List from Allow  <br>click on source, move to customer list and select range B4:B10  <br>If you had  <a href=""> name your range, </a>At  source, you could enter =(named_range) and that should work as well </p>
+                            <p class="card-text">select the cell or range you want to get the drop down list, in this case cell E5:E7, On the ribbon, go to <br>Data <br>Data Validation <br>Select List from Allow  <br>click on source, move to customer list and select range B4:B10  <br>If you had  <a href="#named-ranges"> name your range </a> Then at  source, you could enter =(named_range) and that should work as well </p>
                         </div>
                         <center><img src="{% static 'images/data_val1.png' %}" alt="" style="width: fit-content;"></center>
                         <br><hr>
                         <div class="card-body">
                             <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
-                            <p class="card-text">To clear the data validation, following the procedure above, then click clear all from the dialog box, you can check to box to clear from all cells / range with that same settings.</p>
+                            <p class="card-text">To clear the data validation, following the procedure above, then click clear all from the dialog box, you can check the box to clear from all cells / range with that same settings.</p>
                         </div>
                         <br><hr>
                         <div class="card-body">
                             <div class="card-header"><small style="color: rgb(136, 7, 78);">How it improves your daily task</small></div>
-                            <p class="card-text">Aside giving your a handy drop down tool to select from, it guards you against certain unintended errors which may have gone unnoticed. <br> For instance try to assign Accra to daniel by typing <i>daneil</i> instead of daniel. It throws an error and would not allow it. you can try editting the error message at the data validation dialog box, Error Alert.  to suit your own style</p>
+                            <p class="card-text">Aside giving you a handy drop down tool to select from, it guards you against certain unintended errors which may have gone unnoticed. <br> For instance try to assign Accra to daniel by typing <i>daneil</i> instead of daniel. It throws an error and would not allow it. you can try editting the error message at the data validation dialog box, Error Alert.  to suit your own style</p>
                         </div>
                         <hr>
                         <center><img src="{% static 'images/data_val2.png' %}" alt="" style="width: fit-content;"></center>
@@ -178,9 +176,23 @@
                                         <center><img src="{% static 'images/data_val4.png' %}" alt="" style="width: fit-content;"></center>
                                 </div>                               
                             </div>
-                          </div> 
+                          </div>                    
+                    </div>
+
+                    <div id="next">
+                        <br><hr>
+                        <h4>Next operation!! follows</h4>
+                        
+                         
                     
                     </div>
+
+
+
+
+
+
+
                 </div> 
 
 
