@@ -88,7 +88,10 @@ document.getElementById(div_id).classList.remove('hidden')
 }
 
 
-
+/*function to rotate caret*/
+function rotate_caret(caret_id){
+  document.getElementById(caret_id).classList.toggle('rotate')
+}
 
 
 
@@ -103,5 +106,12 @@ function hide_show_xl_menu(){
 
 function xl_Assumptions(){
   toggle_nav_bar('xl-nav')
-  toggle_nav_bar("assumptions")  
+  toggle_nav_bar("assumptions")
+  rotate_caret('1')  
+}
+
+
+function useful_operations(){
+  toggle_nav_bar("operations")
+  rotate_caret('2')  
 }

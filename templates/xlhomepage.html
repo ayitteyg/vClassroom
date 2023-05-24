@@ -28,8 +28,8 @@
                         
                     </div>
                     <ul class="main_side">
-                        <li><a class="white-text"  onclick="xl_Assumptions()">Assumptions & Tips</a></li>
-                        <li><a class="white-text"  onclick="useful_operations()">Some useful operations</a></li>
+                        <li><a class="white-text"  onclick="xl_Assumptions()">Assumptions & Tips <span class="fa fa-caret-down" id="1"></span></a> </li>
+                        <li><a class="white-text"  onclick="useful_operations()">Some useful operations<span class="fa fa-caret-down" id="2"></span></a></li>
                         <li><a class="white-text"  onclick="useful_operations1()">Some useful functions</a></li>
                         <li><a class="white-text"  onclick="useful_operations2()">Practical Examples</a></li>
                         <li><a href="#">Message</a></li>
@@ -43,7 +43,7 @@
 
             <div class="col-lg-9">
 
-                <div class="container hidden"  id="assumptions">
+                <div class="container hidden "  id="assumptions">
                     <div class="card">
                         <div class="card-header">
                           <small>Assumptions</small>
@@ -96,37 +96,110 @@
                 </div>
 
                 
-                <!--some useful functions container-->
+                <!--some useful operations container-->
                 <br><hr>
-                <div class="container" id="" >
-                   
-                    <h4>Named Ranges</h4>
-                    <div class="card-body">
-                        <p class="card-text">We normally performs some operations on certain columns with data in the spreed sheet. Example: we have the following sales data and would like to sum the sales at cell C5 . We would usally go the cell C5 and enter =SUM(B5:B16). This is simple right, but what if we name the range we want to sum as sales_data and refer to it always.</p>
-                    </div>
-                    <br><hr>
-                    <div class="card-body">
-                        <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
-                        <p class="card-text">Select the data range you want to sum, ie: B5:B16. On your ribbon, go to Formulas>  Named Manager > New.   give a name to your data:  like  sales_data. click on the  reffer to, to see if you selected the right data, then CLOSE. Now in cell C12, enter = sum(sales_data) </p>
-                    </div>
+                <div class="container " id="operations" >
+
+                    <!--breadcumb bar-->
+                    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page">Named Ranges</li>  
+                          <li class="breadcrumb-item"><a href="#data-validation">Data validation</a></li>
+                          <li class="breadcrumb-item"><a href="#">Next</a></li>
+                        </ol>
+                      </nav>
+                    <!--breadcumb bar-->
+
+                   <div id="named-ranges">
+                        <h4>Named Ranges</h4>
+                        <div class="card-body">
+                            <p class="card-text">We normally performs some operations on certain columns with data in the spreed sheet. Example: we have the following sales data and would like to sum the sales at cell C5 . We would usally go the cell C5 and enter =SUM(B5:B16). This is simple right, but what if we name the range we want to sum as sales_data and refer to it always.</p>
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
+                            <p class="card-text">Select the data range you want to sum, ie: B5:B16. On your ribbon, go to Formulas>  Named Manager > New.   give a name to your data:  like  sales_data. click on the  reffer to, to see if you selected the right data, then CLOSE. Now in cell C12, enter = sum(sales_data) </p>
+                        </div>
+                            
+                        <center><img src="{% static 'images/name_rng.png' %}" alt="" style="width: fit-content;"></center>
+                        <br><hr>
+                        <div class="card-body">
+                            <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
+                            <p class="card-text">You can change the name later if you wish, by using the edit instead of new. you can increase the range for future entery, for instance, go the Named Manager, select the named range, go to refers to, instead of :B16 ,  increase it to :B16000. Now any sales you enter within that column range is captured</p>
+                        </div>
+
+                        <br><hr>
+                        <div class="card-body">
+                            <div class="card-header"><small style="color: rgb(136, 7, 78);">How it improves your daily task</small></div>
+                            <p class="card-text">Assuming you often have to refer to your sales data multiples times in different sheets in your workbook. Naming your data saves your from shuffling between sheets to locate your data and dragging it. Wherever, you are in your workbook, just enter =sum(sales_data) <br> if your data spans several columns and rows, you can equally name the whole range and refer to it anywhere in your workbook for further analysis</p>
+                        </div>
+                        <br><hr>
+                        for instance in sheet3, just do this
+                        <center><img src="{% static 'images/name_rng2.png' %}" alt="" style="width: fit-content;"></center>
+                   </div> 
+
+                    <div id="data-validation">
+                        <br><hr>
+                        <h4>Data Validation / Drop down</h4>
+                        <div class="card-body">
+                            <p class="card-text">While working on our spreed sheets, sometimes we would prefer getting some sort of drop down list of items so we can select from, or probably restrict a particular cell or range to accept only a specific type of data. This is where data validation comes in handy. </p>
+                            <p class="card-text">For instance you have a list of customer at range B4:B10. you want to assign a customer to a certain locations, say Accra,Kumasi,Tamale. you want to avoid copy and paste or typing every time. What do you do? </p>
+                        </div>
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
+                            <p class="card-text">select the cell or range you want to get the drop down list, in this case cell E5:E7, On the ribbon, go to <br>Data <br>Data Validation <br>Select List from Allow  <br>click on source, move to customer list and select range B4:B10  <br>If you had  <a href=""> name your range, </a>At  source, you could enter =(named_range) and that should work as well </p>
+                        </div>
+                        <center><img src="{% static 'images/data_val1.png' %}" alt="" style="width: fit-content;"></center>
+                        <br><hr>
+                        <div class="card-body">
+                            <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
+                            <p class="card-text">To clear the data validation, following the procedure above, then click clear all from the dialog box, you can check to box to clear from all cells / range with that same settings.</p>
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <div class="card-header"><small style="color: rgb(136, 7, 78);">How it improves your daily task</small></div>
+                            <p class="card-text">Aside giving your a handy drop down tool to select from, it guards you against certain unintended errors which may have gone unnoticed. <br> For instance try to assign Accra to daniel by typing <i>daneil</i> instead of daniel. It throws an error and would not allow it. you can try editting the error message at the data validation dialog box, Error Alert.  to suit your own style</p>
+                        </div>
+                        <hr>
+                        <center><img src="{% static 'images/data_val2.png' %}" alt="" style="width: fit-content;"></center>
                         
-                    <center><img src="{% static 'images/name_rng.png' %}" alt="" style="width: fit-content;"></center>
-                    <br><hr>
-                    <div class="card-body">
-                        <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
-                        <p class="card-text">You can change the name later if you wish, by using the edit instead of new. you can increase the range for future entery, for instance, go the Named Manager, select the named range, go to refers to, instead of :B16 ,  increase it to :B16000. Now any sales you enter within that column range is captured</p>
+                        <br><hr>
+                        <div class="card">
+                            <div class="card-header">
+                              <small>Simple Application</small>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-body">
+                                    <p class="card-text">You have sales data for several years and would like to return sales value for a specific months within a specific year. So create a year list and month list. Afterwards, at cell J7, create a drop down list for year, at J8:J9, creates a dropdown list for months as well   <br> Now you can select the year, startMonth, endMonth</a>
+                                    
+                                        <center><img src="{% static 'images/data_val3.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                                        <center><img src="{% static 'images/data_val4.png' %}" alt="" style="width: fit-content;"></center>
+                                </div>                               
+                            </div>
+                          </div> 
+                    
                     </div>
-
-                    <br><hr>
-                    <div class="card-body">
-                        <div class="card-header"><small style="color: rgb(136, 7, 78);">How it improves your daily task</small></div>
-                        <p class="card-text">Assuming you often have to refer to your sales data multiples times in different sheets in your workbook. Naming your data saves your from shuffling between sheets to locate your data and dragging it. Wherever, you are in your workbook, just enter =sum(sales_data)</p>
-                    </div>
-                    <br><hr>
-                    for instance in sheet3, just do this
-                    <center><img src="{% static 'images/name_rng2.png' %}" alt="" style="width: fit-content;"></center>
-
                 </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
         </div>
