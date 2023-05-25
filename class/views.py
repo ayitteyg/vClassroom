@@ -73,7 +73,7 @@ def classroom(request):
 
 
 def guestroom(request):
-    return HttpResponse('You are in the GUESTROOM')
+    return render (request, 'inside.html')
 
 
 

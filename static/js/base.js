@@ -123,3 +123,11 @@ function useful_operations(){
   toggle_nav_bar("operations")
   rotate_caret('2')  
 }
+
+
+
+function useful_functions(){
+  toggle_nav_bar('xl-nav')
+  toggle_nav_bar("functions")
+  rotate_caret('3')  
+}

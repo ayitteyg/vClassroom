@@ -30,7 +30,7 @@
                     <ul class="main_side">
                         <li><a class="white-text"  onclick="xl_Assumptions()">Assumptions & Tips <span class="fa fa-caret-down" id="1"></span></a> </li>
                         <li><a class="white-text"  onclick="useful_operations()">Some useful operations<span class="fa fa-caret-down" id="2"></span></a></li>
-                        <li><a class="white-text"  onclick="useful_operations1()">Some useful functions</a></li>
+                        <li><a class="white-text"  onclick="useful_functions()">Some useful functions<span class="fa fa-caret-down" id="3"></span></a></li>
                         <li><a class="white-text"  onclick="useful_operations2()">Practical Examples</a></li>
                         <li><a href="#">Messages</a></li>
                         <li><a href="#">Files</a></li>
@@ -42,7 +42,7 @@
 
             <div class="col-lg-9  sidenav-vl">
 
-                <div class="container  "  id="assumptions">
+                <div class="container"  id="assumptions">
                     <div class="card">
                         <div class="card-header">
                           <small>Assumptions</small>
@@ -70,7 +70,7 @@
                                 <p class="card-text">Think of Excel as your maths book / drawing sheet with all instruments and formulas you could ever need.</p>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">Think of Excel as your programming tool or machine you can instruct to do something for you in your absence.</p>
+                                <p class="card-text">Think of Excel as your programming tool or machine you can instruct to do something for you anytime.</p>
                             </div>
                         </div>
                       </div> 
@@ -104,7 +104,7 @@
                         <ol class="breadcrumb">
                           <li class="breadcrumb-item active" aria-current="page">Named Ranges</li>  
                           <li class="breadcrumb-item"><a href="#data-validation">Data validation</a></li>
-                          <li class="breadcrumb-item"><a href="#next">Next</a></li>
+                          <li class="breadcrumb-item"><a href="#conditional-formatting">conditional formatting</a></li>
                         </ol>
                       </nav>
                     <!--breadcumb bar-->
@@ -137,7 +137,7 @@
                         <center><img src="{% static 'images/name_rng2.png' %}" alt="" style="width: fit-content;"></center>
                    </div> 
 
-                    <div id="next-item">
+                    <div id="data-validation">
                         <br><hr>
                         <h4>Data Validation / Drop down</h4>
                         <div class="card-body">
@@ -179,16 +179,124 @@
                           </div>                    
                     </div>
 
-                    <div id="next">
+                    <div id="conditional-formatting">
                         <br><hr>
-                        <h4>Next operation!! follows</h4>
+                        <h4>Conditional formatting | highights</h4>
+                        <div class="card-body">
+                            <p class="card-text">While working on data in our spread sheet, another great tool at our disposal is conditional formatting. There are several options we can choose from, but my focus will be a simple highighting. Simple but very powerful to easily identity patterns in our data.</p>
+                            <p class="card-text">For instance you have data on credit sales and would like to quickly highlight the values values based on certain criteria  <br> 1. All sales above 5,000 should be in red  <br>2. All sales between 5,000 and 2,000 should be in yellow   <br>3. All sales below 2,000 should be in green</p>
+                            <p class="card-text">Ooh, you can decide to do that manually, but certainly not when you have 1,000+ data. Just apply conditional formatting to that range of data or the whole column and you headache is gone. conditional-formatting is dynamic, therefore the highlighter will change based on the data entered. </p>
+                            
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <h5   style="color: rgb(167, 14, 14);">HOW?</h5>
+                            <p class="card-text">select the cell,range or column that has the values or you would like to enter the values. On the ribbon, go the conditional formatting, and select your option. In the case the first option. Now this would be the logic, Anytime I enter a value in the range or column, <br>If it's greater than 5,000 highight it as red  <br>Else if it's between 5,000 and 2,000 highlight it as Yellow  <br>Else if it's less than 2,000 highight it as green.</p>
+                            <p class="card-text">You are now testing 3 conditions. So you first choose greater than, then enter 5,000 and the color code, Ok. <br> choose between, then enter 2,000 and 5,000 then your color code, Ok   <br> choose less than, then enter 2,000 then your color code, Ok</p>                           
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <p class="card-text">Say you have this data and what to apply conditional-formatting, select range C5:C16 and apply the rules as above</a>                  
+                            <center><img src="{% static 'images/cf1.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                            <hr>
+                            you should have this   
+                            <center><img src="{% static 'images/cf2.png' %}" alt="" style="width: fit-content;"></center>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-header"><small style="color: rgb(212, 109, 11);">Editing</small></div>
+                            <p class="card-text">You can play along with the various options in conditional-formatting to see the effect. You can clear the rules or manage the rules from the options. in order to avoid an empty cell beign highlighted with a color, try adding another rule which says, if the cell = 0, no color: choose custom format from the drop down list, go to fill and choose no color.</p>
+                        </div>
+                        <br>
+                        <div class="card-header">
+                            <small  style="color: rgb(50, 6, 121);">Simple usage</small>
+                          </div>
+                          <div class="card-body">
+                              <div class="card-body">
+                                  <p class="card-text">Below is a daily variations for my products, and I can easily spot a pattern in the variations even without any analysis</a>
+                                    <center><img src="{% static 'images/cf3.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                                     
+                              </div>                               
+                          </div>
+                    </div> 
+
+                    <div id="more-useful operations">
+                        <br><hr>
+                        <h4>more-useful operations to come</h4>
                         
-                         
+                
+                    </div> 
+                    <br><br>
                     
-                    </div>
+                </div>
 
 
 
+                <!--some useful functions container-->
+                <div class="container"   id="functions">
+                    <!--breadcumb bar-->
+                    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item active" aria-current="page">IF</li>  
+                          <li class="breadcrumb-item"><a href="#">SUMIF/SUMIFS</a></li>
+                          <li class="breadcrumb-item"><a href="#">DAYS/EOMONTH</a></li>
+                        </ol>
+                      </nav>
+                    <!--breadcumb bar-->
+                    <h4>IF</h4>
+                        <div class="card-body">
+                            <p class="card-text"> the IF statement is one of the most powerful logical statement. It check a condition and returns a value you want if the condition is met or not met. The IF logical test comes in handy when you would want a certain feedback / summary / or answer based on certain conditions Or you would want to assign a certain value to something based on a condition. <br> </p>
+                        </div>
+                        <br><hr>
+                        <div class="card-body">
+                            <h5   style="color: rgb(167, 14, 14);">syntax?</h5>
+                            <p>The syntax for the IF functions is   [ IF(logical_test, [value_if_true], [value_if_false]) ]</p>
+                            <br><hr>
+                        <div class="card">
+                            <div class="card-header"><small>Ex1</small></div>                           
+                            <div class="card-body">
+                                <div class="card-body">
+                                    <p class="card-text">if my total credit sales for this month is more than GHc 100,000, write 'Limit is exceeded', if not, write 'Within Limit'</a>
+                                     <p>Enter this formular in the cell you want the result in   </p>  <h3>=IF(SUM(G5:G16)>G18,"Limit exceeded","Within Limit")</h3> 
+                                    <center><img src="{% static 'images/if1.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                                    <p>Try changing the limit or increase some of the credit sales value to see the effect</p>
+                                    
+                                </div>                               
+                            </div>
+
+                            <div class="card-header"><small>Ex2</small></div>                           
+                            <div class="card-body">
+                                <div class="card-body">
+                                    <p class="card-text">You gave 5,000 credit each to some customers as loan and  they are currently paying thier debt. However, you want to group them in two categories in order to take further decision on them. <br> The idea is any customer whose total payment so far is more than 80% of his / her debt should be rated as A, if not rate that customer as B </a>
+                                     
+                                    <br><button  type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#solutionModal"><small    style="color:rgb(20, 20, 20)">tip</small></button>
+                                    <div class="modal fade" id="solutionModal" tabindex="-1" aria-labelledby="solutionModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog  modal-dialog-centered ">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h1 class="modal-title fs-5" id="solutionModalLabel">Solution!!</h1>
+                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                              There are several ways to look at this, but basically, you could just divide total payment by the loan amount and multiply by 0.8 to get your value
+                                            </div>                      
+                                          </div>
+                                        </div>
+                                      </div>
+                                   
+                                    <p>Enter this formular in the firt cell M6 and drag it over the range   </p>  <h3>=IF((L6/$L$3)>=$M$3,"A","B")</h3> 
+                                    <center><img src="{% static 'images/if2.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                                    <p>If you had error while dragging it, then probably you forgot to lock the cell which contains the loan amount or the percentage. To lock the cell, hit on where you entered the first formular, then on the formular bar, click on the that particular cell refference in the formular. <br> In my case L3 for the loan and M3 for the percentage. Once you've cliked on it press F4 on the keyboard to lock it. There will be a seperate tutotial on cell referencing later.</p>
+                                    <br>
+                                    You can spice it for visual effect by adding conditional-formatting
+                                    <center><img src="{% static 'images/if3.png' %}" alt="" style="width: fit-content;"></center> <br><hr>
+                                </div>                               
+                            </div>
+
+                          </div>
+                        </div>
+
+
+                </div>
 
 
 
